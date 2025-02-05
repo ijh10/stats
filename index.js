@@ -3,6 +3,7 @@
  * @returns {number} the length of the array
  */
 function getLength(numbers) {
+  return numbers.length;
   // TODO
 }
 
@@ -11,6 +12,14 @@ function getLength(numbers) {
  * @returns {number} the sum of the numbers
  */
 function getSum(numbers) {
+  let sum = 0;
+  let i = 0;
+  while (i < numbers.length) {
+    sum = sum + numbers[i];
+    i = i + 1;
+    console.log(i);
+  }
+  return sum;
   // TODO
 }
 
@@ -19,6 +28,9 @@ function getSum(numbers) {
  * @returns {number} the mean of the numbers
  */
 function getMean(numbers) {
+  let sum = getSum(numbers);
+  return sum / numbers.length;
+
   // TODO
 }
 
@@ -27,6 +39,15 @@ function getMean(numbers) {
  * @returns {number} the smallest of the numbers
  */
 function getMin(numbers) {
+  let min = numbers[0];
+  let i = 0;
+  while (i < numbers.length) {
+    if (numbers[i] < min) {
+      min = numbers[i];
+    }
+    i = i + 1;
+  }
+  return min;
   // TODO
 }
 
@@ -35,7 +56,15 @@ function getMin(numbers) {
  * @returns {number} the largest of the numbers
  */
 function getMax(numbers) {
-  // TODO
+  let max = numbers[0];
+  let i = 0;
+  while (i < numbers.length) {
+    if (numbers[i] > max) {
+      max = numbers[i];
+    }
+    i = i + 1;
+  }
+  return max;
 }
 
 /**
@@ -43,7 +72,8 @@ function getMax(numbers) {
  * @returns {number} the range of the numbers (max - min)
  */
 function getRange(numbers) {
-  // TODO
+  const max = getMax(numbers) - getMin(numbers);
+  return max;
 }
 
 /**
@@ -51,6 +81,16 @@ function getRange(numbers) {
  * @returns {number[]} the even numbers in the array
  */
 function getEvens(numbers) {
+  const evens = [];
+  let i = 0;
+  while (i < numbers.length) {
+    if (numbers[i] % 2 === 0) {
+      evens.push(numbers[i]);
+    }
+    i = i + 1;
+  }
+  return evens;
+
   // TODO
 }
 
@@ -59,6 +99,15 @@ function getEvens(numbers) {
  * @returns {number[]} the odd numbers in the array
  */
 function getOdds(numbers) {
+  const odds = [];
+  let i = 0;
+  while (i < numbers.length) {
+    if (numbers[i] % 2 === 1) {
+      odds.push(numbers[i]);
+    }
+    i = i + 1;
+  }
+  return odds;
   // TODO
 }
 
